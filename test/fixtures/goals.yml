@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: goals
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  type       :string
+#  user_id    :integer
+#  end_date   :date
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  user_id: 
+  end_date: 2015-10-18
+
+two:
+  name: MyString
+  type: 
+  user_id: 
+  end_date: 2015-10-18

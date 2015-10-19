@@ -1,0 +1,56 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :first, 'First Name' %><br />
+    <%= f.text_field :first, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last, 'Last Name' %><br />
+    <%= f.text_field :last %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_field :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label :checkin_hour, "Hrs" %>
+    <%= f.select :checkin_hour, (1..24).to_a.map{ |x| x < 10 ? "0#{x}" : x.to_s } %>
+    <%= f.label :checkin_minute, "Min" %>
+    <%= f.select :checkin_minute, (0..60).step(5).to_a.map { |x| x < 10 ? "0#{x}" : x.to_s } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timezone %><br />
+    <%= f.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones, default: "Mountain Time (US & Canada)" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

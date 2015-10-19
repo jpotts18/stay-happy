@@ -1,0 +1,16 @@
+= form_for @goal do |f|
+  - if @goal.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@goal.errors.count, "error")} prohibited this goal from being saved:"
+      ul
+        - @goal.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name, "What is your goal?"
+    = f.text_field :name
+  .field
+    = f.label :end_date, "When would you like to accomplish this goal?"
+    = f.date_select :end_date
+    
+  .actions = f.submit

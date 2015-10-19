@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First:</strong>
+  <%= @user.first %>
+</p>
+
+<p>
+  <strong>Last:</strong>
+  <%= @user.last %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @user.birthday %>
+</p>
+
+<p>
+  <strong>Checkin hour:</strong>
+  <%= @user.checkin_hour %>
+</p>
+
+<p>
+  <strong>Checkin minute:</strong>
+  <%= @user.checkin_minute %>
+</p>
+
+<p>
+  <strong>Timezone:</strong>
+  <%= @user.timezone %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

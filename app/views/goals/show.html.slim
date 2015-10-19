@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @goal.name
+p
+  strong End date:
+  = @goal.end_date
+
+= link_to 'Edit', edit_goal_path(@goal)
+'|
+= link_to 'Back', goals_path
