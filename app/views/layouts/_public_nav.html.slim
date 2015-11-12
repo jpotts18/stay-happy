@@ -1,0 +1,10 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      a.navbar-brand href="#" Stay Happy
+    .collapse.navbar-collapse
+      p.navbar-text.navbar-right
+        - if user_signed_in?
+          a href="#" User
+        - else
+          = link_to "Sign In", :new_user_session

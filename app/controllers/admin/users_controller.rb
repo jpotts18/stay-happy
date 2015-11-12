@@ -1,4 +1,5 @@
 class UsersController < AuthenticatedController 
+
   access admin: :all
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
